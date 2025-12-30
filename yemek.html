@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezzet Köşesi | Harika Yemek Tarifleri</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #ff4757;
+            --secondary-color: #2f3542;
+            --bg-light: #f1f2f6;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-light);
+        }
+
+        /* Navigasyon */
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color) !important;
+            font-size: 1.5rem;
+        }
+
+        /* Kahraman (Hero) Bölümü */
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            border-radius: 0 0 50px 50px;
+            margin-bottom: 50px;
+        }
+
+        /* Yemek Kartları */
+        .recipe-card {
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .recipe-img {
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .badge-category {
+            background-color: var(--primary-color);
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            padding: 5px 15px;
+            border-radius: 50px;
+        }
+
+        .btn-recipe {
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            border: none;
+            padding: 8px 25px;
+        }
+
+        .btn-recipe:hover {
+            background-color: #ff6b81;
+            color: white;
+        }
+
+        /* Alt Bilgi */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 40px 0;
+            margin-top: 80px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">🥘 LEZZET KÖŞESİ</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Anasayfa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Kategoriler</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Popüler</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-recipe ms-lg-3 text-white" href="#">Tarif Gönder</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section shadow">
+        <div class="container">
+            <h1 class="display-3 fw-bold">Ne Pişirmek İstersin?</h1>
+            <p class="lead mb-4">Binlerce denenmiş, pratik ve lezzetli tarif burada.</p>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control rounded-pill-start p-3 border-0" placeholder="Malzeme veya yemek adı yazın...">
+                        <button class="btn btn-recipe rounded-pill-end px-4" type="button">Ara</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="row mb-4 align-items-center">
+            <div class="col-md-6">
+                <h2 class="fw-bold">Son Tarifler</h2>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <a href="#" class="text-decoration-none text-muted">Tümünü Gör →</a>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card recipe-card h-100">
+                    <span class="badge badge-category">Ana Yemek</span>
+                    <img src="salata.jpg" class="card-img-top recipe-img" alt="Salata">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Renkli Mevsim Salatası</h5>
+                        <p class="card-text text-muted small">Hazırlama: 15 Dakika | Kalori: 120 kcal</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-warning">⭐⭐⭐⭐⭐</span>
+                            <a href="#" class="btn btn-outline-danger btn-sm rounded-pill">İncele</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card recipe-card h-100">
+                    <span class="badge badge-category">Tatlı</span>
+                    <img src="chekek.jpg" class="card-img-top recipe-img" alt="Kek">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Frambuazlı Cheesecake</h5>
+                        <p class="card-text text-muted small">Hazırlama: 60 Dakika | Kalori: 350 kcal</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-warning">⭐⭐⭐⭐⭐</span>
+                            <a href="#" class="btn btn-outline-danger btn-sm rounded-pill">İncele</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card recipe-card h-100">
+                    <span class="badge badge-category">Fast Food</span>
+                    <img src="hamburger.jpg" class="card-img-top recipe-img" alt="Burger">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Ev Yapımı Gurme Burger</h5>
+                        <p class="card-text text-muted small">Hazırlama: 30 Dakika | Kalori: 550 kcal</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-warning">⭐⭐⭐⭐⭐</span>
+                            <a href="#" class="btn btn-outline-danger btn-sm rounded-pill">İncele</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                 <div class="col-md-4">
+                <div class="card recipe-card h-100">
+                    <span class="badge badge-category">Fast Food</span>
+                    <img src="kofte.jpg" class="card-img-top recipe-img" alt="Köfte">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Ev Yapımı Köfte</h5>
+                        <p class="card-text text-muted small">Hazırlama: 25 Dakika | Kalori: 400 kcal</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-warning">⭐⭐⭐⭐⭐</span>
+                            <a href="#" class="btn btn-outline-danger btn-sm rounded-pill">İncele</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center">
+        <div class="container">
+            <h4 class="fw-bold mb-3">🥘 Lezzet Köşesi</h4>
+            <p>Mutfakta mutluluk, bir tarifle başlar.</p>
+            <div class="mt-4">
+                <a href="#" class="text-white mx-2">Instagram</a>
+                <a href="#" class="text-white mx-2">YouTube</a>
+                <a href="#" class="text-white mx-2">Twitter</a>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <p class="small text-muted mb-0">&copy; 2025 Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
