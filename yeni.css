@@ -1,0 +1,106 @@
+:root {
+    --primary: #6366f1;
+    --secondary: #a855f7;
+    --dark: #0f172a;
+    --text-gray: #64748b;
+    --glass: rgba(255, 255, 255, 0.7);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #f8fafc;
+    color: var(--dark);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.container { max-width: 1100px; margin: auto; padding: 0 20px; }
+
+/* Dinamik Arka Plan */
+.blob-bg {
+    position: fixed;
+    top: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, #6366f133, #a855f733);
+    filter: blur(80px);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+/* Navbar */
+.navbar {
+    padding: 25px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(248, 250, 252, 0.8);
+    backdrop-filter: blur(12px);
+}
+
+.nav-content { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.5rem; font-weight: 800; letter-spacing: -1px; }
+.logo span { color: var(--primary); }
+
+.nav-links { display: flex; list-style: none; gap: 30px; align-items: center; }
+.nav-links a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.95rem; }
+
+.gh-btn {
+    background: var(--dark);
+    color: white !important;
+    padding: 8px 18px;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+/* Hero */
+.hero-section { padding: 100px 0; text-align: center; }
+.hero-badge {
+    background: #e0e7ff;
+    color: var(--primary);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+h1 { font-size: 4rem; font-weight: 800; line-height: 1.2; margin-bottom: 20px; }
+.gradient-text {
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-btns { margin-top: 40px; display: flex; gap: 15px; justify-content: center; }
+.btn-primary { background: var(--primary); color: white; padding: 15px 30px; border-radius: 12px; text-decoration: none; font-weight: 600; box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.4); }
+.btn-secondary { border: 2px solid #e2e8f0; color: var(--dark); padding: 15px 30px; border-radius: 12px; text-decoration: none; font-weight: 600; }
+
+/* Proje Kartları */
+.section-title { margin: 60px 0 30px; font-size: 1.8rem; }
+.project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+
+.glass-card {
+    background: var(--glass);
+    border: 1px solid white;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.glass-card:hover { transform: translateY(-10px); background: white; }
+.card-icon { font-size: 2.5rem; margin-bottom: 20px; }
+.tags { margin: 15px 0; display: flex; gap: 8px; }
+.tags span { font-size: 0.75rem; background: #f1f5f9; padding: 4px 10px; border-radius: 6px; color: var(--text-gray); }
+.card-link { color: var(--primary); font-weight: 700; text-decoration: none; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    .project-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+}
